@@ -20,7 +20,7 @@
   summary::-webkit-details-marker { display: none; }
   @keyframes sdFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
   @keyframes sdMascotIn { 0% { opacity: 0; transform: translateX(120%); } 60% { opacity: 1; transform: translateX(-4%); } 100% { opacity: 1; transform: translateX(0); } }
-  .sd-hero-mascot { animation: sdMascotIn 1.3s cubic-bezier(.22,.9,.3,1) .15s both; }
+  .sd-hero-mascot { animation: sdMascotIn 1.3s cubic-bezier(.22,.9,.3,1) .15s both; will-change: transform, opacity; transform: translateZ(0); }
   @media (max-width: 900px) {
     .sd-desktop-nav { display: none !important; }
     .sd-burger { display: flex !important; }
@@ -36,7 +36,7 @@
   .sd-wa:hover { transform: scale(1.1) !important; }
   @keyframes sdDrive { 0%{transform:translateX(-46vw) scaleX(-1);} 8%{transform:translateX(-46vw) scaleX(-1);} 46%{transform:translateX(120vw) scaleX(-1);} 100%{transform:translateX(120vw) scaleX(-1);} }
   .sd-drive-wrap { position: fixed; left: 0; right: 0; bottom: 0; height: 210px; overflow: hidden; pointer-events: none; z-index: 40; }
-  .sd-drive { position: absolute; bottom: 26px; left: 0; width: 152px; height: auto; animation: sdDrive 26s ease-in-out infinite; filter: drop-shadow(0 10px 12px rgba(0,0,0,.28)); }
+  .sd-drive { position: absolute; bottom: 26px; left: 0; width: 152px; height: auto; animation: sdDrive 26s linear infinite; will-change: transform; transform: translateZ(0); backface-visibility: hidden; }
   @media (max-width: 640px){ .sd-drive{ width: 108px; } }
 </style>
 </helmet>
@@ -58,7 +58,7 @@
 
   <!-- NAV -->
   <input type="checkbox" id="sd-nav-toggle">
-  <header style="position: sticky; top: 0; z-index: 50; background: rgba(251,250,247,.92); backdrop-filter: blur(10px); border-bottom: 1px solid #E7E3DB;">
+  <header style="position: sticky; top: 0; z-index: 50; background: #FBFAF7; border-bottom: 1px solid #E7E3DB;">
     <div style="max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
       <a href="index.html" style="display: flex; align-items: center; gap: 12px;">
         <img src="uploads/smart_drive_maskota_logo.png" alt="Smart Drive 021" style="height: 48px; width: auto; display: block;">
@@ -97,7 +97,7 @@
   <section style="position: relative; background: radial-gradient(120% 120% at 80% 0%, #1E77C9 0%, #0E4E8E 55%, #0B3E72 100%); color: #fff; overflow: hidden;">
     <div class="sd-hero-grid" style="max-width: 1200px; margin: 0 auto; padding: 70px 24px 74px; display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: center;">
       <div>
-        <span data-en="Driving school · Novi Sad · Category B" style="display: inline-block; background: rgba(255,255,255,.14); color: #fff; font-weight: 700; font-size: 13.5px; letter-spacing: .04em; padding: 8px 18px; border-radius: 999px; backdrop-filter: blur(4px);">Auto škola · Novi Sad · B kategorija</span>
+        <span data-en="Driving school · Novi Sad · Category B" style="display: inline-block; background: rgba(255,255,255,.14); color: #fff; font-weight: 700; font-size: 13.5px; letter-spacing: .04em; padding: 8px 18px; border-radius: 999px;">Auto škola · Novi Sad · B kategorija</span>
         <h1 data-en="Your road to a driver's licence starts here" style="font-family: 'Sora'; font-weight: 800; font-size: clamp(38px, 5.2vw, 62px); line-height: 1.03; letter-spacing: -.02em; margin: 22px 0 0; max-width: 620px;">Tvoj put do <span style="color: #FFC24B;">vozačke</span> počinje ovde</h1>
         <p data-en="3 new Suzuki cars, an individual approach and a price of RSD 98,000 incl. VAT." style="font-size: 18.5px; line-height: 1.55; color: #D5E4F4; max-width: 520px; margin: 22px 0 32px;">3 nova Suzuki vozila, individualni pristup i cena od 98.000 RSD sa PDV-om.</p>
         <div style="display: flex; flex-wrap: wrap; gap: 14px;">

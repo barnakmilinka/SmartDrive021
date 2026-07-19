@@ -32,7 +32,7 @@
   .sd-wa:hover { transform: scale(1.1) !important; }
   @keyframes sdDrive { 0%{transform:translateX(-46vw) scaleX(-1);} 8%{transform:translateX(-46vw) scaleX(-1);} 46%{transform:translateX(120vw) scaleX(-1);} 100%{transform:translateX(120vw) scaleX(-1);} }
   .sd-drive-wrap { position: fixed; left: 0; right: 0; bottom: 0; height: 210px; overflow: hidden; pointer-events: none; z-index: 40; }
-  .sd-drive { position: absolute; bottom: 26px; left: 0; width: 152px; height: auto; animation: sdDrive 26s ease-in-out infinite; filter: drop-shadow(0 10px 12px rgba(0,0,0,.28)); }
+  .sd-drive { position: absolute; bottom: 26px; left: 0; width: 152px; height: auto; animation: sdDrive 26s linear infinite; will-change: transform; transform: translateZ(0); backface-visibility: hidden; }
   @media (max-width: 640px){ .sd-drive{ width: 108px; } }
 </style>
 </helmet>
@@ -47,7 +47,7 @@
     </div>
   </div>
   <input type="checkbox" id="sd-nav-toggle">
-  <header style="position: sticky; top: 0; z-index: 50; background: rgba(251,250,247,.92); backdrop-filter: blur(10px); border-bottom: 1px solid #E7E3DB;">
+  <header style="position: sticky; top: 0; z-index: 50; background: #FBFAF7; border-bottom: 1px solid #E7E3DB;">
     <div style="max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
       <a href="index.html" style="display: flex; align-items: center; gap: 12px;">
         <img src="uploads/smart_drive_maskota_logo.png" alt="Smart Drive 021" style="height: 48px; width: auto; display: block;">
